@@ -84,6 +84,12 @@ public class frmPago extends javax.swing.JFrame {
             }
         });
 
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+
         txtHoras.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtHorasKeyTyped(evt);
@@ -191,11 +197,11 @@ public class frmPago extends javax.swing.JFrame {
     private void cmdMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMostrarActionPerformed
         // TODO add your handling code here:
             //Entrada
-            int horas = Integer.parseInt(txtHoras.getText());
+            double horas = Double.parseDouble(txtHoras.getText());
             double tarifa = Double.parseDouble(txtTarifa.getText());
             
             //Proceso
-            double basico = horas * tarifa;
+            double  basico = horas * tarifa;
             double bonificacion = basico * 0.2;
             double neto = (basico + bonificacion ) * 0.9;
                
@@ -265,6 +271,10 @@ public class frmPago extends javax.swing.JFrame {
             
         }        // TODO add your handling code here:
     }//GEN-LAST:event_txtTarifaKeyTyped
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
